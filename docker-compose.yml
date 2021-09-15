@@ -1,0 +1,21 @@
+version: "3"
+services:
+  
+  container1:
+    environment:
+      - BIND_ADDRESS=0.0.0.0
+      - PORT=8080
+
+    build:
+      context: ./container1
+      dockerfile: ../Dockerfile
+
+  container2:
+    - BIND_ADDRESS=0.0.0.0
+    - PORT=8080
+
+    build:
+      context: ./container2
+      dockerfile: ../Dockerfile    
+
+
